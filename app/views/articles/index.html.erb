@@ -1,0 +1,11 @@
+<h1>Atricles</h1>
+
+<h3><%= link_to "Creat a new article", new_article_path %></h3>
+
+<% @articles.each do |article|%>
+  <h3><%= link_to article.title, article_path(article) %></h3>
+   <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to "Edit", edit_article_path(article), method: :patch %>
+<% end %>
+
+
